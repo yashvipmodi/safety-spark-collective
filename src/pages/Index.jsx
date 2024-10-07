@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AlertCircle, BookOpen, PhoneCall, Shield } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Index = () => {
   return (
@@ -21,7 +22,9 @@ const Index = () => {
           </CardHeader>
           <CardContent>
             <p>Learn about the impact of gun violence and the importance of gun control measures.</p>
-            <Button className="mt-4">Explore Facts</Button>
+            <Link to="/facts-and-stats">
+              <Button className="mt-4">Explore Facts</Button>
+            </Link>
           </CardContent>
         </Card>
 
@@ -34,7 +37,9 @@ const Index = () => {
           </CardHeader>
           <CardContent>
             <p>Discover practical steps to enhance personal and community safety.</p>
-            <Button className="mt-4">View Safety Tips</Button>
+            <Link to="/safety-measures">
+              <Button className="mt-4">View Safety Tips</Button>
+            </Link>
           </CardContent>
         </Card>
 
@@ -47,7 +52,9 @@ const Index = () => {
           </CardHeader>
           <CardContent>
             <p>Access materials to educate yourself and others about responsible gun ownership and control.</p>
-            <Button className="mt-4">Browse Resources</Button>
+            <Link to="/educational-resources">
+              <Button className="mt-4">Browse Resources</Button>
+            </Link>
           </CardContent>
         </Card>
 
@@ -60,7 +67,9 @@ const Index = () => {
           </CardHeader>
           <CardContent>
             <p>Find support services and hotlines for those affected by gun violence.</p>
-            <Button className="mt-4">Find Support</Button>
+            <Link to="/get-help">
+              <Button className="mt-4">Find Support</Button>
+            </Link>
           </CardContent>
         </Card>
       </div>
