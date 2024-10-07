@@ -70,7 +70,7 @@ const GetHelp = () => {
       {showMap && (
         <div className="mb-6">
           <h2 className="text-2xl font-semibold mb-3">Local Resources Map (Georgia District 3)</h2>
-          <LoadScript googleMapsApiKey="YOUR_ACTUAL_API_KEY_HERE">
+          <LoadScript googleMapsApiKey="AIzaSyBz6CzAva0T5dmg3XEgFobks4MgvLkVgDQ">
             <GoogleMap
               mapContainerStyle={mapContainerStyle}
               center={mapCenter}
