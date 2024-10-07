@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 const GetHelp = () => {
   const [showHotlines, setShowHotlines] = useState(false);
+  const [showMap, setShowMap] = useState(false);
 
   const hotlines = [
     { name: "National Suicide Prevention Lifeline", number: "1-800-273-8255" },
@@ -20,14 +22,34 @@ const GetHelp = () => {
     { name: "Firearm Safety Courses", info: "Check with local law enforcement or certified instructors for firearm safety and training courses." },
   ];
 
+  // Georgia District 3 center coordinates (approximate)
+  const mapCenter = { lat: 33.0456, lng: -84.6415 };
+
+  // Sample locations in Georgia District 3 (you should replace these with actual locations)
+  const locations = [
+    { name: "Newnan Police Department", position: { lat: 33.3807, lng: -84.7997 } },
+    { name: "LaGrange Police Department", position: { lat: 33.0362, lng: -85.0322 } },
+    { name: "Griffin Police Department", position: { lat: 33.2468, lng: -84.2640 } },
+  ];
+
+  const mapContainerStyle = {
+    width: '100%',
+    height: '400px'
+  };
+
   return (
     <div className="min-h-screen bg-gray-100 p-8">
       <h1 className="text-3xl font-bold mb-4">Get Help</h1>
       <p className="mb-4">Find support services, hotlines, and local resources for those affected by gun violence.</p>
       
-      <Button onClick={() => setShowHotlines(!showHotlines)} className="mb-4">
-        {showHotlines ? "Hide Support Services" : "Find Support"}
-      </Button>
+      <div className="space-y-4 mb-6">
+        <Button onClick={() => setShowHotlines(!showHotlines)} className="mr-4">
+          {showHotlines ? "Hide Support Services" : "Find Support"}
+        </Button>
+        <Button onClick={() => setShowMap(!showMap)}>
+          {showMap ? "Hide Map" : "Show Local Resources Map"}
+        </Button>
+      </div>
 
       {showHotlines && (
         <div className="space-y-4 mb-6">
@@ -42,6 +64,27 @@ const GetHelp = () => {
               </li>
             ))}
           </ul>
+        </div>
+      )}
+
+      {showMap && (
+        <div className="mb-6">
+          <h2 className="text-2xl font-semibold mb-3">Local Resources Map (Georgia District 3)</h2>
+          <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
+            <GoogleMap
+              mapContainerStyle={mapContainerStyle}
+              center={mapCenter}
+              zoom={9}
+            >
+              {locations.map((location, index) => (
+                <Marker
+                  key={index}
+                  position={location.position}
+                  title={location.name}
+                />
+              ))}
+            </GoogleMap>
+          </LoadScript>
         </div>
       )}
 
