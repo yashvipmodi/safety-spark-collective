@@ -13,10 +13,17 @@ const GetHelp = () => {
     { name: "Veterans Crisis Line", number: "1-800-273-8255 (Press 1)" },
   ];
 
+  const localResources = [
+    { name: "Local Police Department", info: "Call 911 for emergencies or check your local police department's website for non-emergency numbers." },
+    { name: "Gun Violence Prevention Organizations", info: "Search for local chapters of national organizations like Everytown for Gun Safety or Brady Campaign." },
+    { name: "Community Mental Health Centers", info: "Find local mental health resources through SAMHSA's treatment locator: https://findtreatment.samhsa.gov/" },
+    { name: "Firearm Safety Courses", info: "Check with local law enforcement or certified instructors for firearm safety and training courses." },
+  ];
+
   return (
     <div className="min-h-screen bg-gray-100 p-8">
       <h1 className="text-3xl font-bold mb-4">Get Help</h1>
-      <p className="mb-4">Find support services and hotlines for those affected by gun violence.</p>
+      <p className="mb-4">Find support services, hotlines, and local resources for those affected by gun violence.</p>
       
       <Button onClick={() => setShowHotlines(!showHotlines)} className="mb-4">
         {showHotlines ? "Hide Support Services" : "Find Support"}
@@ -38,7 +45,16 @@ const GetHelp = () => {
         </div>
       )}
 
-      <h2 className="text-2xl font-semibold mb-3">Additional Resources:</h2>
+      <h2 className="text-2xl font-semibold mb-3">Local Resources and Help Stations</h2>
+      <ul className="list-disc pl-5 mb-6 space-y-2">
+        {localResources.map((resource, index) => (
+          <li key={index}>
+            <strong>{resource.name}:</strong> {resource.info}
+          </li>
+        ))}
+      </ul>
+
+      <h2 className="text-2xl font-semibold mb-3">Additional Online Resources:</h2>
       <ul className="list-disc pl-5 mb-6 space-y-2">
         <li><a href="https://www.thehotline.org/" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">National Domestic Violence Hotline</a></li>
         <li><a href="https://suicidepreventionlifeline.org/" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">National Suicide Prevention Lifeline</a></li>
