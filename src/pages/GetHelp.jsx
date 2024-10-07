@@ -22,10 +22,7 @@ const GetHelp = () => {
     { name: "Firearm Safety Courses", info: "Check with local law enforcement or certified instructors for firearm safety and training courses." },
   ];
 
-  // Georgia District 3 center coordinates (approximate)
   const mapCenter = { lat: 33.0456, lng: -84.6415 };
-
-  // Sample locations in Georgia District 3 (you should replace these with actual locations)
   const locations = [
     { name: "Newnan Police Department", position: { lat: 33.3807, lng: -84.7997 } },
     { name: "LaGrange Police Department", position: { lat: 33.0362, lng: -85.0322 } },
