@@ -23,7 +23,7 @@ const GetHelp = () => {
       </Button>
 
       {showHotlines && (
-        <div className="space-y-4">
+        <div className="space-y-4 mb-6">
           <h2 className="text-2xl font-semibold">Support Services and Hotlines</h2>
           <ul className="list-disc pl-5 space-y-2">
             {hotlines.map((hotline, index) => (
@@ -38,8 +38,16 @@ const GetHelp = () => {
         </div>
       )}
 
+      <h2 className="text-2xl font-semibold mb-3">Additional Resources:</h2>
+      <ul className="list-disc pl-5 mb-6 space-y-2">
+        <li><a href="https://www.thehotline.org/" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">National Domestic Violence Hotline</a></li>
+        <li><a href="https://suicidepreventionlifeline.org/" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">National Suicide Prevention Lifeline</a></li>
+        <li><a href="https://www.samhsa.gov/find-help/national-helpline" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">SAMHSA's National Helpline</a></li>
+        <li><a href="https://www.mentalhealth.gov/get-help/immediate-help" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">MentalHealth.gov: Get Immediate Help</a></li>
+      </ul>
+
       <Link to="/">
-        <Button className="mt-4">Back to Home</Button>
+        <Button>Back to Home</Button>
       </Link>
     </div>
   );
