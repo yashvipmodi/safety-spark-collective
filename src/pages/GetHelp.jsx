@@ -27,6 +27,11 @@ const GetHelp = () => {
     { name: "Newnan Police Department", position: { lat: 33.3807, lng: -84.7997 } },
     { name: "LaGrange Police Department", position: { lat: 33.0362, lng: -85.0322 } },
     { name: "Griffin Police Department", position: { lat: 33.2468, lng: -84.2640 } },
+    { name: "Peachtree City Police Department", position: { lat: 33.3968, lng: -84.5963 } },
+    { name: "Carrollton Police Department", position: { lat: 33.5801, lng: -85.0766 } },
+    { name: "Fayetteville Police Department", position: { lat: 33.4487, lng: -84.4549 } },
+    { name: "Thomaston Police Department", position: { lat: 32.8882, lng: -84.3265 } },
+    { name: "Villa Rica Police Department", position: { lat: 33.7315, lng: -84.9166 } },
   ];
 
   const mapContainerStyle = {
@@ -66,7 +71,7 @@ const GetHelp = () => {
 
       {showMap && (
         <div className="mb-6">
-          <h2 className="text-2xl font-semibold mb-3">Local Resources Map (Georgia District 3)</h2>
+          <h2 className="text-2xl font-semibold mb-3">Local Police Stations in Georgia District 3</h2>
           <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
             <GoogleMap
               mapContainerStyle={mapContainerStyle}
