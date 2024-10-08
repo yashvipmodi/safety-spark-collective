@@ -83,6 +83,12 @@ const GetHelp = () => {
                   key={index}
                   position={location.position}
                   title={location.name}
+                  label={{
+                    text: "P",
+                    color: "white",
+                    fontSize: "14px",
+                    fontWeight: "bold"
+                  }}
                 />
               ))}
             </GoogleMap>
