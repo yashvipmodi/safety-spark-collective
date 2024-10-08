@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { AlertCircle, BookOpen, PhoneCall, Shield } from 'lucide-react';
+import { AlertCircle, BookOpen, PhoneCall, Shield, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
@@ -12,7 +12,7 @@ const Index = () => {
         <p className="text-xl text-gray-600">Promoting Safety and Prevention</p>
       </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center">
@@ -69,6 +69,21 @@ const Index = () => {
             <p>Find support services and hotlines for those affected by gun violence.</p>
             <Link to="/get-help">
               <Button className="mt-4">Find Support</Button>
+            </Link>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center">
+              <Calendar className="mr-2" />
+              Local Events
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p>Discover upcoming gun safety and awareness events in your area.</p>
+            <Link to="/local-events">
+              <Button className="mt-4">View Events</Button>
             </Link>
           </CardContent>
         </Card>

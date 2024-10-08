@@ -1,9 +1,10 @@
-import { HomeIcon, AlertCircle, Shield, BookOpen, PhoneCall } from "lucide-react";
+import { HomeIcon, AlertCircle, Shield, BookOpen, PhoneCall, Calendar } from "lucide-react";
 import Index from "./pages/Index.jsx";
 import FactsAndStats from "./pages/FactsAndStats.jsx";
 import SafetyMeasures from "./pages/SafetyMeasures.jsx";
 import EducationalResources from "./pages/EducationalResources.jsx";
 import GetHelp from "./pages/GetHelp.jsx";
+import LocalEvents from "./pages/LocalEvents.jsx";
 
 export const navItems = [
   {
@@ -35,5 +36,11 @@ export const navItems = [
     to: "/get-help",
     icon: <PhoneCall className="h-4 w-4" />,
     page: <GetHelp />,
+  },
+  {
+    title: "Local Events",
+    to: "/local-events",
+    icon: <Calendar className="h-4 w-4" />,
+    page: <LocalEvents />,
   },
 ];
