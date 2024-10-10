@@ -8,15 +8,15 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-green-100 p-8">
       <header className="text-center mb-12">
-        <h1 className="text-5xl font-bold text-blue-800 mb-4">Gun Control Awareness</h1>
+        <h1 className="text-5xl font-bold text-blue-800 mb-4">SafeShot</h1>
         <p className="text-2xl text-blue-600">Promoting Safety and Prevention</p>
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {[
-          { title: "Facts & Statistics", icon: AlertCircle, description: "Learn about the impact of gun violence and the importance of gun control measures.", link: "/facts-and-stats" },
+          { title: "Facts & Statistics", icon: AlertCircle, description: "Learn about the impact of gun violence and the importance of gun safety measures.", link: "/facts-and-stats" },
           { title: "Safety Measures", icon: Shield, description: "Discover practical steps to enhance personal and community safety.", link: "/safety-measures" },
-          { title: "Educational Resources", icon: BookOpen, description: "Access materials to educate yourself and others about responsible gun ownership and control.", link: "/educational-resources" },
+          { title: "Educational Resources", icon: BookOpen, description: "Access materials to educate yourself and others about responsible gun ownership and safety.", link: "/educational-resources" },
           { title: "Get Help", icon: PhoneCall, description: "Find support services and hotlines for those affected by gun violence.", link: "/get-help" },
           { title: "Local Events", icon: Calendar, description: "Discover upcoming gun safety and awareness events in your area.", link: "/local-events" },
         ].map((item, index) => (
@@ -38,7 +38,7 @@ const Index = () => {
       </div>
 
       <footer className="text-center mt-12 text-gray-600">
-        <p>© 2023 Gun Control Awareness. All rights reserved.</p>
+        <p>© 2023 SafeShot. All rights reserved.</p>
       </footer>
     </div>
   );
