@@ -5,15 +5,15 @@ import EventCalendar from '../components/EventCalendar';
 
 const LocalEvents = () => {
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
-      <h1 className="text-3xl font-bold mb-4">Local Gun Safety and Awareness Events</h1>
-      <p className="mb-6">Explore upcoming events related to gun safety and awareness near you.</p>
+    <div className="min-h-screen bg-gradient-to-br from-blue-100 to-green-100 p-8">
+      <h1 className="text-3xl font-bold mb-4 text-blue-800">Local Gun Safety and Awareness Events</h1>
+      <p className="mb-6 text-blue-600">Explore upcoming events related to gun safety and awareness near you.</p>
       
       <EventCalendar />
       
       <div className="mt-8">
         <Link to="/">
-          <Button>Back to Home</Button>
+          <Button className="bg-blue-600 hover:bg-blue-700">Back to Home</Button>
         </Link>
       </div>
     </div>
