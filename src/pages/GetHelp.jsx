@@ -41,22 +41,22 @@ const GetHelp = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-green-100 p-8">
-      <h1 className="text-3xl font-bold mb-4 text-blue-800">Get Help</h1>
-      <p className="mb-4 text-blue-600">Find support services, hotlines, and local resources for those affected by gun violence.</p>
+      <h1 className="text-3xl font-bold mb-4">Get Help</h1>
+      <p className="mb-4">Find support services, hotlines, and local resources for those affected by gun violence.</p>
       
       <div className="space-y-4 mb-6">
-        <Button onClick={() => setShowHotlines(!showHotlines)} className="mr-4 bg-blue-600 hover:bg-blue-700">
+        <Button onClick={() => setShowHotlines(!showHotlines)} className="mr-4 bg-blue-600 hover:bg-blue-700 text-white">
           {showHotlines ? "Hide Support Services" : "Find Support"}
         </Button>
-        <Button onClick={() => setShowMap(!showMap)} className="bg-blue-600 hover:bg-blue-700">
+        <Button onClick={() => setShowMap(!showMap)} className="bg-blue-600 hover:bg-blue-700 text-white">
           {showMap ? "Hide Map" : "Show Local Resources Map"}
         </Button>
       </div>
 
       {showHotlines && (
         <div className="space-y-4 mb-6">
-          <h2 className="text-2xl font-semibold text-blue-800">Support Services and Hotlines</h2>
-          <ul className="list-disc pl-5 space-y-2 text-blue-700">
+          <h2 className="text-2xl font-semibold">Support Services and Hotlines</h2>
+          <ul className="list-disc pl-5 space-y-2">
             {hotlines.map((hotline, index) => (
               <li key={index}>
                 <strong>{hotline.name}:</strong>{" "}
@@ -71,7 +71,7 @@ const GetHelp = () => {
 
       {showMap && (
         <div className="mb-6">
-          <h2 className="text-2xl font-semibold mb-3 text-blue-800">Local Police Stations in Georgia District 3</h2>
+          <h2 className="text-2xl font-semibold mb-3">Local Police Stations in Georgia District 3</h2>
           <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
             <GoogleMap
               mapContainerStyle={mapContainerStyle}
@@ -96,8 +96,8 @@ const GetHelp = () => {
         </div>
       )}
 
-      <h2 className="text-2xl font-semibold mb-3 text-blue-800">Local Resources and Help Stations</h2>
-      <ul className="list-disc pl-5 mb-6 space-y-2 text-blue-700">
+      <h2 className="text-2xl font-semibold mb-3">Local Resources and Help Stations</h2>
+      <ul className="list-disc pl-5 mb-6 space-y-2">
         {localResources.map((resource, index) => (
           <li key={index}>
             <strong>{resource.name}:</strong> {resource.info}
@@ -105,8 +105,8 @@ const GetHelp = () => {
         ))}
       </ul>
 
-      <h2 className="text-2xl font-semibold mb-3 text-blue-800">Additional Online Resources:</h2>
-      <ul className="list-disc pl-5 mb-6 space-y-2 text-blue-700">
+      <h2 className="text-2xl font-semibold mb-3">Additional Online Resources:</h2>
+      <ul className="list-disc pl-5 mb-6 space-y-2">
         <li><a href="https://www.thehotline.org/" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">National Domestic Violence Hotline</a></li>
         <li><a href="https://suicidepreventionlifeline.org/" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">National Suicide Prevention Lifeline</a></li>
         <li><a href="https://www.samhsa.gov/find-help/national-helpline" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">SAMHSA's National Helpline</a></li>
@@ -114,7 +114,7 @@ const GetHelp = () => {
       </ul>
 
       <Link to="/">
-        <Button className="bg-blue-600 hover:bg-blue-700">Back to Home</Button>
+        <Button className="bg-blue-600 hover:bg-blue-700 text-white">Back to Home</Button>
       </Link>
     </div>
   );
