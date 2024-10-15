@@ -8,8 +8,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-green-100 p-8">
       <header className="text-center mb-12">
-        <h1 className="text-5xl font-bold text-blue-800 mb-4">SafeShot</h1>
-        <p className="text-2xl text-blue-600">Promoting Safety and Prevention</p>
+        <h1 className="text-5xl font-bold text-black mb-4">SafeShot</h1>
+        <p className="text-2xl text-black">Promoting Safety and Prevention</p>
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -22,7 +22,7 @@ const Index = () => {
         ].map((item, index) => (
           <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
             <CardHeader>
-              <CardTitle className="flex items-center text-2xl text-blue-700">
+              <CardTitle className="flex items-center text-2xl text-black">
                 <item.icon className="mr-2 h-6 w-6" />
                 {item.title}
               </CardTitle>
