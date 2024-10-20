@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 const EducationalResources = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 to-green-100 p-8">
-      <h1 className="text-3xl font-bold mb-4">Educational Resources</h1>
+    <div className="min-h-screen bg-gradient-to-br from-blue-100 to-green-100 p-4 md:p-8">
+      <h1 className="text-2xl md:text-3xl font-bold mb-4">Educational Resources</h1>
       <p className="mb-4">Access materials to educate yourself and others about responsible gun ownership, safety, and prevention:</p>
       
       <h2 className="text-2xl font-semibold mb-3">Online Courses and Webinars:</h2>
@@ -29,11 +29,20 @@ const EducationalResources = () => {
         <li><a href="https://www.atf.gov/firearms/firearms-guides-importation-verification-firearms-gun-control-act-definitions" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">ATF: Firearms Guides and Resources</a></li>
       </ul>
 
-      <h2 className="text-2xl font-semibold mb-3">Advocacy and Education Programs:</h2>
+      <h2 className="text-xl md:text-2xl font-semibold mb-3">Advocacy and Online Communities:</h2>
       <ul className="list-disc pl-5 mb-6 space-y-2">
-        <li><a href="https://everytownresearch.org/report/gun-violence-in-america/" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Everytown for Gun Safety: Research and Reports</a></li>
-        <li><a href="https://giffords.org/lawcenter/" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Giffords Law Center: Gun Law Resources</a></li>
-        <li><a href="https://www.bradyunited.org/programs" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Brady: Gun Violence Prevention Programs</a></li>
+        <li><a href="https://momsdemandaction.org/" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Moms Demand Action: Join local chapters and online communities</a></li>
+        <li><a href="https://marchforourlives.com/" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">March For Our Lives: Youth-led movement for gun violence prevention</a></li>
+        <li><a href="https://www.bradyunited.org/take-action" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Brady: Take Action on Gun Violence Prevention</a></li>
+        <li><a href="https://giffords.org/action/" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Giffords: Join the fight to end gun violence</a></li>
+        <li><a href="https://www.reddit.com/r/GunsAreCool/" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">r/GunsAreCool: Reddit community for discussion on gun violence articles</a></li>
+      </ul>
+
+      <h2 className="text-xl md:text-2xl font-semibold mb-3">Current Gun Control Legislation:</h2>
+      <p className="mb-4">Stay informed about current gun control bills and legislation:</p>
+      <ul className="list-disc pl-5 mb-6 space-y-2">
+        <li><a href="https://www.congress.gov/search?q={%22source%22:%22legislation%22,%22search%22:%22gun%20control%22}" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Congress.gov: Search for current gun control bills</a></li>
+        <li><a href="https://www.govtrack.us/congress/bills/subjects/firearms_and_explosives/5977" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">GovTrack: Track gun control legislation</a></li>
       </ul>
 
       <Link to="/">
