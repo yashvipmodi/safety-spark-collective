@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { AlertCircle, BookOpen, PhoneCall, Shield, Calendar, Users, GavelIcon } from 'lucide-react';
+import { AlertCircle, BookOpen, PhoneCall, Shield, Calendar, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
@@ -19,8 +19,7 @@ const Index = () => {
           { title: "Educational Resources", icon: BookOpen, description: "Access materials to educate yourself and others about responsible gun ownership and safety.", link: "/educational-resources" },
           { title: "Get Help", icon: PhoneCall, description: "Find support services and hotlines for those affected by gun violence.", link: "/get-help" },
           { title: "Local Events", icon: Calendar, description: "Discover upcoming gun safety and awareness events in your area.", link: "/local-events" },
-          { title: "Advocacy", icon: Users, description: "Connect with others and get involved in gun safety advocacy.", link: "/advocacy" },
-          { title: "Legislation", icon: GavelIcon, description: "Stay informed about current gun control bills and legislation.", link: "/legislation" },
+          { title: "Advocacy & Legislation", icon: Users, description: "Connect with others, get involved in gun safety advocacy, and stay informed about current gun control legislation.", link: "/advocacy-and-legislation" },
         ].map((item, index) => (
           <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
             <CardHeader>
