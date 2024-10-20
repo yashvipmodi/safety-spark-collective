@@ -1,10 +1,12 @@
-import { HomeIcon, AlertCircle, Shield, BookOpen, PhoneCall, Calendar } from "lucide-react";
+import { HomeIcon, AlertCircle, Shield, BookOpen, PhoneCall, Calendar, Users, GavelIcon } from "lucide-react";
 import Index from "./pages/Index.jsx";
 import FactsAndStats from "./pages/FactsAndStats.jsx";
 import SafetyMeasures from "./pages/SafetyMeasures.jsx";
 import EducationalResources from "./pages/EducationalResources.jsx";
 import GetHelp from "./pages/GetHelp.jsx";
 import LocalEvents from "./pages/LocalEvents.jsx";
+import Advocacy from "./pages/Advocacy.jsx";
+import Legislation from "./pages/Legislation.jsx";
 
 export const navItems = [
   {
@@ -42,5 +44,17 @@ export const navItems = [
     to: "/local-events",
     icon: <Calendar className="h-4 w-4" />,
     page: <LocalEvents />,
+  },
+  {
+    title: "Advocacy",
+    to: "/advocacy",
+    icon: <Users className="h-4 w-4" />,
+    page: <Advocacy />,
+  },
+  {
+    title: "Legislation",
+    to: "/legislation",
+    icon: <GavelIcon className="h-4 w-4" />,
+    page: <Legislation />,
   },
 ];
