@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
 import { LoadScript, GoogleMap, Marker } from '@react-google-maps/api';
 
 const AdvocacyAndLegislation = () => {
-  const [activeSection, setActiveSection] = useState(null);
-
   const mapCenter = { lat: 33.0456, lng: -84.6415 };
   const locations = [
     { name: "Newnan Police Department", position: { lat: 33.3807, lng: -84.7997 } },
@@ -21,10 +19,6 @@ const AdvocacyAndLegislation = () => {
   const mapContainerStyle = {
     width: '100%',
     height: '400px'
-  };
-
-  const toggleSection = (section) => {
-    setActiveSection(activeSection === section ? null : section);
   };
 
   return (
@@ -78,69 +72,43 @@ const AdvocacyAndLegislation = () => {
 
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-3">Local Resources in Georgia's District 3</h2>
-        <p className="mb-4">Click on each category to view specific locations:</p>
+        <p className="mb-4">Find nearby police stations, fire stations, and hospitals:</p>
         
-        <div className="space-y-4">
-          <Button
-            onClick={() => toggleSection('police')}
-            className="w-full text-left justify-between"
-          >
-            Police Stations
-            <span>{activeSection === 'police' ? '▲' : '▼'}</span>
-          </Button>
-          {activeSection === 'police' && (
-            <ul className="list-disc pl-5 mb-4 space-y-1">
-              <li><a href="https://goo.gl/maps/qZJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Newnan Police Department</a></li>
-              <li><a href="https://goo.gl/maps/wXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">LaGrange Police Department</a></li>
-              <li><a href="https://goo.gl/maps/eXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Griffin Police Department</a></li>
-              <li><a href="https://goo.gl/maps/rXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Peachtree City Police Department</a></li>
-              <li><a href="https://goo.gl/maps/tXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Carrollton Police Department</a></li>
-              <li><a href="https://goo.gl/maps/yXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Fayetteville Police Department</a></li>
-              <li><a href="https://goo.gl/maps/uXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Thomaston Police Department</a></li>
-              <li><a href="https://goo.gl/maps/iXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Villa Rica Police Department</a></li>
-            </ul>
-          )}
+        <h3 className="text-xl font-semibold mb-2">Police Stations</h3>
+        <ul className="list-disc pl-5 mb-4 space-y-1">
+          <li><a href="https://goo.gl/maps/qZJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Newnan Police Department</a></li>
+          <li><a href="https://goo.gl/maps/wXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">LaGrange Police Department</a></li>
+          <li><a href="https://goo.gl/maps/eXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Griffin Police Department</a></li>
+          <li><a href="https://goo.gl/maps/rXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Peachtree City Police Department</a></li>
+          <li><a href="https://goo.gl/maps/tXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Carrollton Police Department</a></li>
+          <li><a href="https://goo.gl/maps/yXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Fayetteville Police Department</a></li>
+          <li><a href="https://goo.gl/maps/uXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Thomaston Police Department</a></li>
+          <li><a href="https://goo.gl/maps/iXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Villa Rica Police Department</a></li>
+        </ul>
 
-          <Button
-            onClick={() => toggleSection('fire')}
-            className="w-full text-left justify-between"
-          >
-            Fire Departments
-            <span>{activeSection === 'fire' ? '▲' : '▼'}</span>
-          </Button>
-          {activeSection === 'fire' && (
-            <ul className="list-disc pl-5 mb-4 space-y-1">
-              <li><a href="https://goo.gl/maps/aXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Newnan Fire Department</a></li>
-              <li><a href="https://goo.gl/maps/sXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">LaGrange Fire Department</a></li>
-              <li><a href="https://goo.gl/maps/dXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Griffin Fire-Rescue</a></li>
-              <li><a href="https://goo.gl/maps/fXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Peachtree City Fire Rescue</a></li>
-              <li><a href="https://goo.gl/maps/gXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Carrollton Fire Department</a></li>
-              <li><a href="https://goo.gl/maps/hXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Fayetteville Fire Department</a></li>
-              <li><a href="https://goo.gl/maps/jXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Thomaston Fire Department</a></li>
-              <li><a href="https://goo.gl/maps/kXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Villa Rica Fire Department</a></li>
-            </ul>
-          )}
+        <h3 className="text-xl font-semibold mb-2">Fire Stations</h3>
+        <ul className="list-disc pl-5 mb-4 space-y-1">
+          <li><a href="https://goo.gl/maps/aXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Newnan Fire Department</a></li>
+          <li><a href="https://goo.gl/maps/sXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">LaGrange Fire Department</a></li>
+          <li><a href="https://goo.gl/maps/dXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Griffin Fire-Rescue</a></li>
+          <li><a href="https://goo.gl/maps/fXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Peachtree City Fire Rescue</a></li>
+          <li><a href="https://goo.gl/maps/gXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Carrollton Fire Department</a></li>
+          <li><a href="https://goo.gl/maps/hXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Fayetteville Fire Department</a></li>
+          <li><a href="https://goo.gl/maps/jXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Thomaston Fire Department</a></li>
+          <li><a href="https://goo.gl/maps/kXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Villa Rica Fire Department</a></li>
+        </ul>
 
-          <Button
-            onClick={() => toggleSection('hospitals')}
-            className="w-full text-left justify-between"
-          >
-            Hospitals
-            <span>{activeSection === 'hospitals' ? '▲' : '▼'}</span>
-          </Button>
-          {activeSection === 'hospitals' && (
-            <ul className="list-disc pl-5 mb-4 space-y-1">
-              <li><a href="https://goo.gl/maps/lXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Piedmont Newnan Hospital</a></li>
-              <li><a href="https://goo.gl/maps/zXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">WellStar West Georgia Medical Center</a></li>
-              <li><a href="https://goo.gl/maps/xXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Wellstar Spalding Regional Hospital</a></li>
-              <li><a href="https://goo.gl/maps/cXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Piedmont Fayette Hospital</a></li>
-              <li><a href="https://goo.gl/maps/vXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Tanner Medical Center Carrollton</a></li>
-              <li><a href="https://goo.gl/maps/bXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Piedmont Fayette Hospital</a></li>
-              <li><a href="https://goo.gl/maps/nXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Upson Regional Medical Center</a></li>
-              <li><a href="https://goo.gl/maps/mXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Tanner Medical Center Villa Rica</a></li>
-            </ul>
-          )}
-        </div>
+        <h3 className="text-xl font-semibold mb-2">Hospitals</h3>
+        <ul className="list-disc pl-5 mb-4 space-y-1">
+          <li><a href="https://goo.gl/maps/lXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Piedmont Newnan Hospital</a></li>
+          <li><a href="https://goo.gl/maps/zXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">WellStar West Georgia Medical Center</a></li>
+          <li><a href="https://goo.gl/maps/xXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Wellstar Spalding Regional Hospital</a></li>
+          <li><a href="https://goo.gl/maps/cXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Piedmont Fayette Hospital</a></li>
+          <li><a href="https://goo.gl/maps/vXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Tanner Medical Center Carrollton</a></li>
+          <li><a href="https://goo.gl/maps/bXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Piedmont Fayette Hospital</a></li>
+          <li><a href="https://goo.gl/maps/nXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Upson Regional Medical Center</a></li>
+          <li><a href="https://goo.gl/maps/mXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Tanner Medical Center Villa Rica</a></li>
+        </ul>
       </section>
 
       <Link to="/">
