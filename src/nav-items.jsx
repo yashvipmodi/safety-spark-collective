@@ -5,7 +5,8 @@ import SafetyMeasures from "./pages/SafetyMeasures.jsx";
 import EducationalResources from "./pages/EducationalResources.jsx";
 import GetHelp from "./pages/GetHelp.jsx";
 import LocalEvents from "./pages/LocalEvents.jsx";
-import AdvocacyAndLegislation from "./pages/AdvocacyAndLegislation.jsx";
+import Advocacy from "./pages/Advocacy.jsx";
+import Legislation from "./pages/Legislation.jsx";
 
 export const navItems = [
   {
@@ -45,9 +46,15 @@ export const navItems = [
     page: <LocalEvents />,
   },
   {
-    title: "Advocacy & Legislation",
-    to: "/advocacy-and-legislation",
+    title: "Advocacy",
+    to: "/advocacy",
     icon: <Users className="h-4 w-4" />,
-    page: <AdvocacyAndLegislation />,
+    page: <Advocacy />,
+  },
+  {
+    title: "Legislation",
+    to: "/legislation",
+    icon: <GavelIcon className="h-4 w-4" />,
+    page: <Legislation />,
   },
 ];
