@@ -6,7 +6,6 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 const GetHelp = () => {
   const [showHotlines, setShowHotlines] = useState(false);
   const [showMap, setShowMap] = useState(false);
-  const [activeSection, setActiveSection] = useState(null);
 
   const hotlines = [
     { name: "National Suicide Prevention Lifeline", number: "1-800-273-8255" },
@@ -38,10 +37,6 @@ const GetHelp = () => {
   const mapContainerStyle = {
     width: '100%',
     height: '400px'
-  };
-
-  const toggleSection = (section) => {
-    setActiveSection(activeSection === section ? null : section);
   };
 
   return (
@@ -101,72 +96,14 @@ const GetHelp = () => {
         </div>
       )}
 
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-3">Local Resources in Georgia's District 3</h2>
-        <p className="mb-4">Click on each category to view specific locations:</p>
-        
-        <div className="space-y-4">
-          <Button
-            onClick={() => toggleSection('police')}
-            className="w-full text-left justify-between"
-          >
-            Police Stations
-            <span>{activeSection === 'police' ? '▲' : '▼'}</span>
-          </Button>
-          {activeSection === 'police' && (
-            <ul className="list-disc pl-5 mb-4 space-y-1">
-              <li><a href="https://goo.gl/maps/qZJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Newnan Police Department</a></li>
-              <li><a href="https://goo.gl/maps/wXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">LaGrange Police Department</a></li>
-              <li><a href="https://goo.gl/maps/eXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Griffin Police Department</a></li>
-              <li><a href="https://goo.gl/maps/rXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Peachtree City Police Department</a></li>
-              <li><a href="https://goo.gl/maps/tXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Carrollton Police Department</a></li>
-              <li><a href="https://goo.gl/maps/yXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Fayetteville Police Department</a></li>
-              <li><a href="https://goo.gl/maps/uXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Thomaston Police Department</a></li>
-              <li><a href="https://goo.gl/maps/iXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Villa Rica Police Department</a></li>
-            </ul>
-          )}
-
-          <Button
-            onClick={() => toggleSection('fire')}
-            className="w-full text-left justify-between"
-          >
-            Fire Departments
-            <span>{activeSection === 'fire' ? '▲' : '▼'}</span>
-          </Button>
-          {activeSection === 'fire' && (
-            <ul className="list-disc pl-5 mb-4 space-y-1">
-              <li><a href="https://goo.gl/maps/aXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Newnan Fire Department</a></li>
-              <li><a href="https://goo.gl/maps/sXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">LaGrange Fire Department</a></li>
-              <li><a href="https://goo.gl/maps/dXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Griffin Fire-Rescue</a></li>
-              <li><a href="https://goo.gl/maps/fXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Peachtree City Fire Rescue</a></li>
-              <li><a href="https://goo.gl/maps/gXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Carrollton Fire Department</a></li>
-              <li><a href="https://goo.gl/maps/hXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Fayetteville Fire Department</a></li>
-              <li><a href="https://goo.gl/maps/jXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Thomaston Fire Department</a></li>
-              <li><a href="https://goo.gl/maps/kXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Villa Rica Fire Department</a></li>
-            </ul>
-          )}
-
-          <Button
-            onClick={() => toggleSection('hospitals')}
-            className="w-full text-left justify-between"
-          >
-            Hospitals
-            <span>{activeSection === 'hospitals' ? '▲' : '▼'}</span>
-          </Button>
-          {activeSection === 'hospitals' && (
-            <ul className="list-disc pl-5 mb-4 space-y-1">
-              <li><a href="https://goo.gl/maps/lXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Piedmont Newnan Hospital</a></li>
-              <li><a href="https://goo.gl/maps/zXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">WellStar West Georgia Medical Center</a></li>
-              <li><a href="https://goo.gl/maps/xXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Wellstar Spalding Regional Hospital</a></li>
-              <li><a href="https://goo.gl/maps/cXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Piedmont Fayette Hospital</a></li>
-              <li><a href="https://goo.gl/maps/vXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Tanner Medical Center Carrollton</a></li>
-              <li><a href="https://goo.gl/maps/bXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Piedmont Fayette Hospital</a></li>
-              <li><a href="https://goo.gl/maps/nXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Upson Regional Medical Center</a></li>
-              <li><a href="https://goo.gl/maps/mXJX8Z9Z9Z9Z9Z9Z9" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Tanner Medical Center Villa Rica</a></li>
-            </ul>
-          )}
-        </div>
-      </section>
+      <h2 className="text-2xl font-semibold mb-3">Local Resources and Help Stations</h2>
+      <ul className="list-disc pl-5 mb-6 space-y-2">
+        {localResources.map((resource, index) => (
+          <li key={index}>
+            <strong>{resource.name}:</strong> {resource.info}
+          </li>
+        ))}
+      </ul>
 
       <h2 className="text-2xl font-semibold mb-3">Additional Online Resources:</h2>
       <ul className="list-disc pl-5 mb-6 space-y-2">
