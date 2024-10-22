@@ -15,21 +15,6 @@ const GetHelp = () => {
   ];
 
   const mapCenter = { lat: 33.0456, lng: -84.6415 };
-  const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
-
-  const MapEmbed = ({ query }) => (
-    <div className="mb-4">
-      <iframe
-        width="100%"
-        height="400"
-        style={{ border: 0 }}
-        loading="lazy"
-        allowFullScreen
-        referrerPolicy="no-referrer-when-downgrade"
-        src={`https://www.google.com/maps/embed/v1/search?key=${apiKey}&q=${query}&center=${mapCenter.lat},${mapCenter.lng}&zoom=10`}
-      ></iframe>
-    </div>
-  );
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-green-100 p-8">
@@ -65,9 +50,17 @@ const GetHelp = () => {
         <div className="mb-6 space-y-8">
           <div>
             <h2 className="text-2xl font-semibold mb-3">Local Police Stations Near Me</h2>
-            <MapEmbed query="police+stations" />
+            <iframe
+              src={`https://www.google.com/maps/embed/v1/search?key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}&q=police+stations&center=${mapCenter.lat},${mapCenter.lng}&zoom=9`}
+              width="100%"
+              height="400"
+              style={{border:0}}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
             <a 
-              href={`https://www.google.com/maps/search/police+stations/@${mapCenter.lat},${mapCenter.lng},10z`} 
+              href={`https://www.google.com/maps/search/police+stations/@${mapCenter.lat},${mapCenter.lng},9z`} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-blue-600 hover:underline mt-2 inline-block"
@@ -78,9 +71,17 @@ const GetHelp = () => {
 
           <div>
             <h2 className="text-2xl font-semibold mb-3">Fire Departments Near Me</h2>
-            <MapEmbed query="fire+departments" />
+            <iframe
+              src={`https://www.google.com/maps/embed/v1/search?key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}&q=fire+departments&center=${mapCenter.lat},${mapCenter.lng}&zoom=9`}
+              width="100%"
+              height="400"
+              style={{border:0}}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
             <a 
-              href={`https://www.google.com/maps/search/fire+departments/@${mapCenter.lat},${mapCenter.lng},10z`} 
+              href={`https://www.google.com/maps/search/fire+departments/@${mapCenter.lat},${mapCenter.lng},9z`} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-blue-600 hover:underline mt-2 inline-block"
@@ -91,9 +92,17 @@ const GetHelp = () => {
 
           <div>
             <h2 className="text-2xl font-semibold mb-3">Local Hospitals Near Me</h2>
-            <MapEmbed query="hospitals" />
+            <iframe
+              src={`https://www.google.com/maps/embed/v1/search?key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}&q=hospitals&center=${mapCenter.lat},${mapCenter.lng}&zoom=9`}
+              width="100%"
+              height="400"
+              style={{border:0}}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
             <a 
-              href={`https://www.google.com/maps/search/hospitals/@${mapCenter.lat},${mapCenter.lng},10z`} 
+              href={`https://www.google.com/maps/search/hospitals/@${mapCenter.lat},${mapCenter.lng},9z`} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-blue-600 hover:underline mt-2 inline-block"
