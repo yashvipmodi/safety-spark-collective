@@ -15,13 +15,6 @@ const GetHelp = () => {
     { name: "Veterans Crisis Line", number: "1-800-273-8255 (Press 1)" },
   ];
 
-  const localResources = [
-    { name: "Local Police Department", info: "Call 911 for emergencies or check your local police department's website for non-emergency numbers." },
-    { name: "Gun Violence Prevention Organizations", info: "Search for local chapters of national organizations like Everytown for Gun Safety or Brady Campaign." },
-    { name: "Community Mental Health Centers", info: "Find local mental health resources through SAMHSA's treatment locator: https://findtreatment.samhsa.gov/" },
-    { name: "Firearm Safety Courses", info: "Check with local law enforcement or certified instructors for firearm safety and training courses." },
-  ];
-
   const mapCenter = { lat: 33.0456, lng: -84.6415 };
   const mapContainerStyle = {
     width: '100%',
@@ -116,6 +109,14 @@ const GetHelp = () => {
                 ))}
               </GoogleMap>
             </LoadScript>
+            <a 
+              href={`https://www.google.com/maps/search/police+stations/@${mapCenter.lat},${mapCenter.lng},9z`} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-blue-600 hover:underline mt-2 inline-block"
+            >
+              View Police Stations on Google Maps
+            </a>
           </div>
 
           <div>
@@ -141,6 +142,14 @@ const GetHelp = () => {
                 ))}
               </GoogleMap>
             </LoadScript>
+            <a 
+              href={`https://www.google.com/maps/search/fire+departments/@${mapCenter.lat},${mapCenter.lng},9z`} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-blue-600 hover:underline mt-2 inline-block"
+            >
+              View Fire Departments on Google Maps
+            </a>
           </div>
 
           <div>
@@ -166,17 +175,24 @@ const GetHelp = () => {
                 ))}
               </GoogleMap>
             </LoadScript>
+            <a 
+              href={`https://www.google.com/maps/search/hospitals/@${mapCenter.lat},${mapCenter.lng},9z`} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-blue-600 hover:underline mt-2 inline-block"
+            >
+              View Hospitals on Google Maps
+            </a>
           </div>
         </div>
       )}
 
       <h2 className="text-2xl font-semibold mb-3">Local Resources and Help Stations</h2>
       <ul className="list-disc pl-5 mb-6 space-y-2">
-        {localResources.map((resource, index) => (
-          <li key={index}>
-            <strong>{resource.name}:</strong> {resource.info}
-          </li>
-        ))}
+        <li><strong>Local Police Department:</strong> Call 911 for emergencies or check your local police department's website for non-emergency numbers.</li>
+        <li><strong>Gun Violence Prevention Organizations:</strong> Search for local chapters of national organizations like Everytown for Gun Safety or Brady Campaign.</li>
+        <li><strong>Community Mental Health Centers:</strong> Find local mental health resources through SAMHSA's treatment locator: <a href="https://findtreatment.samhsa.gov/" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">https://findtreatment.samhsa.gov/</a></li>
+        <li><strong>Firearm Safety Courses:</strong> Check with local law enforcement or certified instructors for firearm safety and training courses.</li>
       </ul>
 
       <h2 className="text-2xl font-semibold mb-3">Additional Online Resources:</h2>
