@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 const GetHelp = () => {
   const [showHotlines, setShowHotlines] = useState(false);
@@ -16,43 +15,6 @@ const GetHelp = () => {
   ];
 
   const mapCenter = { lat: 33.0456, lng: -84.6415 };
-  const mapContainerStyle = {
-    width: '100%',
-    height: '400px'
-  };
-
-  const policeStations = [
-    { name: "Newnan Police Department", position: { lat: 33.3807, lng: -84.7997 } },
-    { name: "LaGrange Police Department", position: { lat: 33.0362, lng: -85.0322 } },
-    { name: "Griffin Police Department", position: { lat: 33.2468, lng: -84.2640 } },
-    { name: "Peachtree City Police Department", position: { lat: 33.3968, lng: -84.5963 } },
-    { name: "Carrollton Police Department", position: { lat: 33.5801, lng: -85.0766 } },
-    { name: "Fayetteville Police Department", position: { lat: 33.4487, lng: -84.4549 } },
-    { name: "Thomaston Police Department", position: { lat: 32.8882, lng: -84.3265 } },
-    { name: "Villa Rica Police Department", position: { lat: 33.7315, lng: -84.9166 } },
-  ];
-
-  const fireDepartments = [
-    { name: "Newnan Fire Department", position: { lat: 33.3800, lng: -84.7990 } },
-    { name: "LaGrange Fire Department", position: { lat: 33.0370, lng: -85.0315 } },
-    { name: "Griffin Fire-Rescue", position: { lat: 33.2470, lng: -84.2645 } },
-    { name: "Peachtree City Fire Rescue", position: { lat: 33.3960, lng: -84.5970 } },
-    { name: "Carrollton Fire Department", position: { lat: 33.5810, lng: -85.0760 } },
-    { name: "Fayetteville Fire Department", position: { lat: 33.4490, lng: -84.4540 } },
-    { name: "Thomaston Fire Department", position: { lat: 32.8885, lng: -84.3260 } },
-    { name: "Villa Rica Fire Department", position: { lat: 33.7320, lng: -84.9160 } },
-  ];
-
-  const hospitals = [
-    { name: "Piedmont Newnan Hospital", position: { lat: 33.3814, lng: -84.7657 } },
-    { name: "WellStar West Georgia Medical Center", position: { lat: 33.0280, lng: -85.0479 } },
-    { name: "Wellstar Spalding Regional Hospital", position: { lat: 33.2417, lng: -84.2836 } },
-    { name: "Piedmont Fayette Hospital", position: { lat: 33.4601, lng: -84.5547 } },
-    { name: "Tanner Medical Center Carrollton", position: { lat: 33.5889, lng: -85.0958 } },
-    { name: "Piedmont Fayette Hospital", position: { lat: 33.4601, lng: -84.5547 } },
-    { name: "Upson Regional Medical Center", position: { lat: 32.8885, lng: -84.3265 } },
-    { name: "Tanner Medical Center Villa Rica", position: { lat: 33.7315, lng: -84.9166 } },
-  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-green-100 p-8">
@@ -88,27 +50,15 @@ const GetHelp = () => {
         <div className="mb-6 space-y-8">
           <div>
             <h2 className="text-2xl font-semibold mb-3">Local Police Stations Near Me</h2>
-            <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
-              <GoogleMap
-                mapContainerStyle={mapContainerStyle}
-                center={mapCenter}
-                zoom={9}
-              >
-                {policeStations.map((station, index) => (
-                  <Marker
-                    key={index}
-                    position={station.position}
-                    title={station.name}
-                    label={{
-                      text: "P",
-                      color: "white",
-                      fontSize: "14px",
-                      fontWeight: "bold"
-                    }}
-                  />
-                ))}
-              </GoogleMap>
-            </LoadScript>
+            <iframe
+              src={`https://www.google.com/maps/embed/v1/search?key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}&q=police+stations&center=${mapCenter.lat},${mapCenter.lng}&zoom=9`}
+              width="100%"
+              height="400"
+              style={{border:0}}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
             <a 
               href={`https://www.google.com/maps/search/police+stations/@${mapCenter.lat},${mapCenter.lng},9z`} 
               target="_blank" 
@@ -121,27 +71,15 @@ const GetHelp = () => {
 
           <div>
             <h2 className="text-2xl font-semibold mb-3">Fire Departments Near Me</h2>
-            <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
-              <GoogleMap
-                mapContainerStyle={mapContainerStyle}
-                center={mapCenter}
-                zoom={9}
-              >
-                {fireDepartments.map((department, index) => (
-                  <Marker
-                    key={index}
-                    position={department.position}
-                    title={department.name}
-                    label={{
-                      text: "F",
-                      color: "white",
-                      fontSize: "14px",
-                      fontWeight: "bold"
-                    }}
-                  />
-                ))}
-              </GoogleMap>
-            </LoadScript>
+            <iframe
+              src={`https://www.google.com/maps/embed/v1/search?key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}&q=fire+departments&center=${mapCenter.lat},${mapCenter.lng}&zoom=9`}
+              width="100%"
+              height="400"
+              style={{border:0}}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
             <a 
               href={`https://www.google.com/maps/search/fire+departments/@${mapCenter.lat},${mapCenter.lng},9z`} 
               target="_blank" 
@@ -154,27 +92,15 @@ const GetHelp = () => {
 
           <div>
             <h2 className="text-2xl font-semibold mb-3">Local Hospitals Near Me</h2>
-            <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
-              <GoogleMap
-                mapContainerStyle={mapContainerStyle}
-                center={mapCenter}
-                zoom={9}
-              >
-                {hospitals.map((hospital, index) => (
-                  <Marker
-                    key={index}
-                    position={hospital.position}
-                    title={hospital.name}
-                    label={{
-                      text: "H",
-                      color: "white",
-                      fontSize: "14px",
-                      fontWeight: "bold"
-                    }}
-                  />
-                ))}
-              </GoogleMap>
-            </LoadScript>
+            <iframe
+              src={`https://www.google.com/maps/embed/v1/search?key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}&q=hospitals&center=${mapCenter.lat},${mapCenter.lng}&zoom=9`}
+              width="100%"
+              height="400"
+              style={{border:0}}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
             <a 
               href={`https://www.google.com/maps/search/hospitals/@${mapCenter.lat},${mapCenter.lng},9z`} 
               target="_blank" 
