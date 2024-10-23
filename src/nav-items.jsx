@@ -1,53 +1,43 @@
-import { HomeIcon, AlertCircle, Shield, BookOpen, PhoneCall, Calendar, Users, GavelIcon } from "lucide-react";
-import Index from "./pages/Index.jsx";
-import FactsAndStats from "./pages/FactsAndStats.jsx";
-import SafetyMeasures from "./pages/SafetyMeasures.jsx";
-import EducationalResources from "./pages/EducationalResources.jsx";
-import GetHelp from "./pages/GetHelp.jsx";
-import LocalEvents from "./pages/LocalEvents.jsx";
-import AdvocacyAndLegislation from "./pages/AdvocacyAndLegislation.jsx";
+import Index from "./pages/Index";
+import Legislation from "./pages/Legislation";
+import SafetyMeasures from "./pages/SafetyMeasures";
+import LocalEvents from "./pages/LocalEvents";
+import FactsAndStats from "./pages/FactsAndStats";
+import Advocacy from "./pages/Advocacy";
+import GetHelp from "./pages/GetHelp";
+import AuthPage from "./components/auth/AuthPage";
 
 export const navItems = [
   {
-    title: "Home",
     to: "/",
-    icon: <HomeIcon className="h-4 w-4" />,
     page: <Index />,
   },
   {
-    title: "Facts & Statistics",
-    to: "/facts-and-stats",
-    icon: <AlertCircle className="h-4 w-4" />,
-    page: <FactsAndStats />,
+    to: "/legislation",
+    page: <Legislation />,
   },
   {
-    title: "Safety Measures",
     to: "/safety-measures",
-    icon: <Shield className="h-4 w-4" />,
     page: <SafetyMeasures />,
   },
   {
-    title: "Educational Resources",
-    to: "/educational-resources",
-    icon: <BookOpen className="h-4 w-4" />,
-    page: <EducationalResources />,
-  },
-  {
-    title: "Get Help",
-    to: "/get-help",
-    icon: <PhoneCall className="h-4 w-4" />,
-    page: <GetHelp />,
-  },
-  {
-    title: "Local Events",
     to: "/local-events",
-    icon: <Calendar className="h-4 w-4" />,
     page: <LocalEvents />,
   },
   {
-    title: "Advocacy & Legislation",
-    to: "/advocacy-and-legislation",
-    icon: <Users className="h-4 w-4" />,
-    page: <AdvocacyAndLegislation />,
+    to: "/facts-and-stats",
+    page: <FactsAndStats />,
+  },
+  {
+    to: "/advocacy",
+    page: <Advocacy />,
+  },
+  {
+    to: "/auth",
+    page: <AuthPage />,
+  },
+  {
+    to: "/help",
+    page: <GetHelp />,
   },
 ];
