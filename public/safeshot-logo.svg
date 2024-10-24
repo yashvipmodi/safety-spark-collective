@@ -1,11 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500">
+  <!-- Orange circular background -->
   <circle cx="250" cy="250" r="200" fill="#FF8C42"/>
-  <text x="250" y="200" text-anchor="middle" font-size="48" fill="#333333">ADVOCACY</text>
-  <path d="M150,250 C150,200 350,200 350,250" stroke="#FFFFFF" stroke-width="8" fill="none"/>
-  <rect x="200" y="220" width="100" height="60" fill="#FFFFFF"/>
-  <circle cx="200" cy="300" r="20" fill="#FFFFFF"/>
-  <circle cx="250" cy="300" r="20" fill="#FFFFFF"/>
-  <circle cx="300" cy="300" r="20" fill="#FFFFFF"/>
-  <path d="M150,350 Q250,370 350,350" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
-  <text x="250" y="360" text-anchor="middle" font-size="32" fill="#333333">SAFESHOT</text>
+  
+  <!-- ADVOCACY text at the top -->
+  <text x="250" y="180" text-anchor="middle" font-family="Arial" font-size="48" fill="#333333" font-weight="bold">ADVOCACY</text>
+  
+  <!-- Megaphone icon in speech bubble -->
+  <rect x="200" y="200" width="100" height="80" fill="white" rx="10"/>
+  <path d="M230,240 L260,220 L260,260 L230,240" fill="#FF8C42"/>
+  <circle cx="270" cy="240" r="5" fill="#FF8C42"/>
+  
+  <!-- People icons -->
+  <circle cx="200" cy="300" r="20" fill="white"/>
+  <circle cx="250" cy="300" r="20" fill="white"/>
+  <circle cx="300" cy="300" r="20" fill="white"/>
+  
+  <!-- Banner with SAFESHOT -->
+  <path d="M150,350 Q250,370 350,350 L350,380 Q250,400 150,380 Z" fill="white" stroke="#333333" stroke-width="2"/>
+  <text x="250" y="370" text-anchor="middle" font-family="Arial" font-size="32" fill="#333333" font-weight="bold">SAFESHOT</text>
 </svg>
