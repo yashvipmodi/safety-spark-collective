@@ -37,10 +37,6 @@ const Index = () => {
           </Card>
         ))}
       </div>
-
-      <footer className="text-center mt-12 text-gray-600">
-        <p>© 2023 SafeShot. All rights reserved.</p>
-      </footer>
     </div>
   );
 };
