@@ -8,11 +8,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-green-100 p-8">
       <header className="text-center mb-12">
-        <img 
-          src="/safeshot-logo.svg" 
-          alt="SafeShot Logo" 
-          className="h-32 mx-auto mb-4"
-        />
+        <h1 className="text-5xl font-bold text-black mb-4">SafeShot</h1>
         <p className="text-2xl text-black">Promoting Safety and Prevention</p>
       </header>
 
