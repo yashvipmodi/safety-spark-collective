@@ -1,8 +1,3 @@
-const postMessage = (message) => {
-  window.top.postMessage(message, "https://gptengineer.app");
-  window.top.postMessage(message, "http://localhost:3000");
-};
-
 const patchFetch = (reportHTTPError) => {
   // Save the original fetch function
   const originalFetch = window.fetch;
