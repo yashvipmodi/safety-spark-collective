@@ -1,3 +1,5 @@
+newfolder/file.txt
+  
 import { toPng } from "html-to-image";
 
 export const loadGetUserSnapshotEventListener = () => {
